@@ -26,3 +26,13 @@ docker run -it forbidden-android-heat
 ```
 http://<Docker ip>:4000
 ```
+
+
+## Solution Approach
+
+- Navigate to the login page
+- Trying SQL injection and default passwords doesn't help
+- Fuzzing random things we find robots.txt
+- Find admin dashboard for thermostat
+- View page source
+- Use math to set the temperature         
