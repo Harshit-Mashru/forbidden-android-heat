@@ -2,10 +2,10 @@
 My second CTF Problem for PicoCTF
 
 ## Keywords
-Web Exploitation
-Robots.txt
-Python eval
-Fuzzing
+- Web Exploitation
+- Robots.txt
+- Python eval
+- Fuzzing
 
 
 ## Set up steps
