@@ -18,8 +18,13 @@ WORKDIR /app
 # Copy the entire application directory to the container
 COPY ./app .
 
+# Only root can see. Needed for picoctf, and how it knows the right flag.
+RUN mkdir /challenge && chmod 700 /challenge
+RUN echo "{\"flag\":\"$(cat /root/flag.txt)\"}" > /challenge/metadata.json
+
 # Expose port
 EXPOSE 4000
+# PUBLISH 4000 AS port
 
 # Initialize the database and run the application
 # RUN sqlite3 users.db "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, password TEXT NOT NULL); INSERT OR IGNORE INTO users (username, password) VALUES ('admin', 'p@@5w0rd!');" & python3 app.py&
